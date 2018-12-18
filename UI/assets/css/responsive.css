@@ -1,0 +1,130 @@
+
+/************ Non-Mobile First Method ************/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.container {
+		max-width: 960px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .container {
+		max-width: 870px;
+    }
+	.card {
+        max-width: 80%;
+    }
+}
+
+/* Medium Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.container {
+		max-width: 660px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.container {
+		max-width: 320px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .card-header {
+        margin-left: 18 px;
+        text-align: left;
+        font-size: 20px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+        margin: 10px auto;
+    }
+    
+    input[type="submit"] {
+        margin-top: 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    input::placeholder {
+        font-size: 14px;
+    }
+
+    span {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .button {
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	.container {
+		max-width: 260px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .card-header {
+        margin-left: 16 px;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 14px;
+        width: 80%;
+        margin: 10px auto;
+    }
+    
+    input[type="submit"] {
+        margin-top: 20px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    input::placeholder {
+        font-size: 12px;
+    }
+
+    span {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .button {
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+}
