@@ -21,7 +21,7 @@ a {
 	color: none;
 }
 a:visited {
-	color: none;
+	color: blue;
 }
 
 li {
@@ -209,7 +209,7 @@ input::placeholder {
     padding: 10px;
 }
 
-.questions, .comment {
+.questions, .comment, .comment-reply {
     border: 1px solid rgba(0, 0, 0, 0.425);
     border-radius: 8px;
     padding: 20px;
@@ -218,15 +218,18 @@ input::placeholder {
     grid-gap: 2em;
 }
 
-.questions #avatar, .comment #avatar {
+.questions #avatar, .comment #avatar, .comment-reply #avatar {
     background: rgb(229, 166, 241);
     border-radius: 50%;
-    padding: 15px 35px;
+    color: #fff;
+    padding: 15px 33px;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 60px;
 }
-.questions #name, .comment #name {
+.questions #name, .comment #name, .comment-reply #name {
     font-size: 16px;
     margin-left: 15px;
+    display: inline-block;
 }
 
 .questions #upvote, #downvote, #reply,
@@ -252,13 +255,72 @@ input::placeholder {
     color: #fff;
 }
 textarea {
+    padding-top: 20px;
+    padding-left: 5x;
     width: 100%;
-    height: 200px;
+    border-radius: 8px;
 }
+textarea::placeholder {
+    font-style: italic;
+}
+textarea:focus {
+    outline-color: transparent;
+}
+
 
 #questionForm {
     float: right;
     margin-top: 0;
     font-size: 16px;
     width: 15%;
+}
+
+.replies {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+#commentForm {
+    float: right;
+    margin-top: 0;
+    font-size: 18px;
+    width: 15%;
+}
+
+/* Profile Page */
+.hero {
+    background: rgb(30, 67, 99);
+    color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+	padding-top: 10px;
+	padding-bottom: 60px; 
+}
+
+.hero-image {
+	padding-left: 60px;
+}
+.hero h1 {
+	font-size: 52px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.hero small {
+	margin: 10px 20px 68px;
+}
+
+.profile .stats, .profile .highlights {
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.profile .highlights {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.profile .quote {
+    font-size: 96px;
 }
