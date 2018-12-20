@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MeetUp | Questioner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/responsive.css" />
+    <script src="../assets/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo text-center">
+                <h1>Questioner</h1>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="row display">
+            <div class="col" id="col1">
+                <img src="#" alt="Image">
+            </div>
+            <div class="col" id="col2">
+                <h3>MeetUp Name</h3>
+                <p>Description:</p>
+                <p>
+                    This is the description of this meetup.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Voluptatem, ipsa at nulla sed in beatae eaque modi alias, 
+                    quos enim adipisci odit molestias voluptate dolores ea nisi, 
+                    illo minus consequatur.
+                </p>
+            </div>
+            <div class="col">
+                <button class="button button-green" type="submit">Add to my schedule</button>
+            </div>
+        </section>
+
+        <!-- Questions section-->
+        <section>
+            <div class="row questions">
+                <div class="col">
+                    <span id="avatar">J</span><br>
+                    <span id="name">John Doe</span>
+                </div>
+                <div class="col">
+                    <p>Hi, am new here and I'd love to know what this meetup is all about. Thanks.
+                       Hi, am new here and I'd love to know what this meetup is all about. Thanks.
+                       Hi, am new here and I'd love to know what this meetup is all about. Thanks.
+                    </p>
+                </div>
+                <div class="col">
+                    <span class="btn btn-primary" id="upvote">Upvote</span><i class="arrow"></i>
+                    <span class="btn btn-danger" id="downvote">Downvote</span><i class="arrow"></i>
+                    <button id="reply"><a href="comment.html">Reply to this comment</a></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question Form -->
+        <form action="#" method="POST">
+            <div class="form-row">
+                <div class="form-input">
+                    <textarea type="text" name="question" rows="10" placeholder="Ask a question"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-input">
+                    <input class="button button-green" id="questionForm" type="submit" value="Post">
+                </div>
+            </div>
+        </form>
+    </div> <!-- end container -->
+</body>
+</html>

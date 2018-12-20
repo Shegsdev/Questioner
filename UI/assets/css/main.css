@@ -21,7 +21,7 @@ a {
 	color: none;
 }
 a:visited {
-	color: #212121;
+	color: blue;
 }
 
 li {
@@ -46,12 +46,28 @@ span {
     font-size: 14px;
     margin: 0;
 }
+
 img {
 	max-width: 100%;
 }
 
+.btn {
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: rgb(30, 67, 99);
+}
+.btn-danger {
+    color: rgb(188, 45, 25);
+}
+
 .text-center {
 	text-align: center;
+}
+
+.logo h1 {
+    color: rgb(255, 137, 38);
 }
 
 nav {
@@ -98,6 +114,16 @@ nav {
 .button-red:hover {
 	color: white;
 	background: rgb(200, 40, 25);
+}
+
+.button-green {
+    color: rgb(5, 155, 80);
+    border: 2px solid rgb(5, 155, 80) !important;
+	background: #fff;
+}
+.button-green:hover {
+	color: white;
+	background: rgb(5, 155, 80);
 }
 .button:disabled {
 	cursor: not-allowed;
@@ -147,10 +173,154 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+input[type="submit"]:focus {
+    outline-color: #fff;
+}
+
 input::placeholder {
     font-size: 18px;
 }
 
 .navigate {
     margin-bottom: 80px;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+.display #col1 {
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.display #col2 {
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+.display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+
+.col {
+    padding: 10px;
+}
+
+.questions, .comment, .comment-reply {
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 8px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 2em;
+}
+
+.questions #avatar, .comment #avatar, .comment-reply #avatar {
+    background: rgb(229, 166, 241);
+    border-radius: 50%;
+    color: #fff;
+    padding: 15px 33px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+}
+.questions #name, .comment #name, .comment-reply #name {
+    font-size: 16px;
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.questions #upvote, #downvote, #reply,
+.comment #upvote, #downvote {
+    position: relative;
+    bottom: -105px;
+}
+
+.questions #downvote,
+.comment #downvote {
+    right: -50px;
+}
+
+.questions #reply {
+    right: -85px;
+    border: 0 none;
+    color: #fff;
+    margin: 3px 0;
+    cursor: pointer;
+    background: rgb(30, 67, 99);
+}
+.questions #reply a:visited {
+    color: #fff;
+}
+textarea {
+    padding-top: 20px;
+    padding-left: 5x;
+    width: 100%;
+    border-radius: 8px;
+}
+textarea::placeholder {
+    font-style: italic;
+}
+textarea:focus {
+    outline-color: transparent;
+}
+
+
+#questionForm {
+    float: right;
+    margin-top: 0;
+    font-size: 16px;
+    width: 15%;
+}
+
+.replies {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+#commentForm {
+    float: right;
+    margin-top: 0;
+    font-size: 18px;
+    width: 15%;
+}
+
+/* Profile Page */
+.hero {
+    background: rgb(30, 67, 99);
+    color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+	padding-top: 10px;
+	padding-bottom: 60px; 
+}
+
+.hero-image {
+	padding-left: 60px;
+}
+.hero h1 {
+	font-size: 52px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.hero small {
+	margin: 10px 20px 68px;
+}
+
+.profile .stats, .profile .highlights {
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.profile .highlights {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.profile .quote {
+    font-size: 96px;
 }
