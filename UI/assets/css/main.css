@@ -72,11 +72,28 @@ img {
 
 .logo h1 {
     color: rgb(255, 137, 38);
+    padding-left: 10px;
 }
 
 nav {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+#nav-bar {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.icon {
+    min-height: 10px;
+}
+nav .icons {
+    display: flex;
+}
+.icon img {
+    -ms-transform: scale(0.3); /* IE 9 */
+    -webkit-transform: scale(0.3); /* Safari 3-8 */
+    transform: scale(0.2);
 }
 
 .container {
@@ -339,9 +356,7 @@ textarea:focus {
     border: 0 none;
     padding: 10px 20px;
     font-size: 18px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    
     font-weight: bold;
     background: rgb(5, 155, 80);
 }

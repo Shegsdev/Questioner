@@ -7,13 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/responsive.css" />
-    <script src="../assets/js/main.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo text-center">
+        <nav id="nav-bar">
+            <div class="logo">
                 <h1>Questioner</h1>
+            </div>
+            <div class="icons">
+                <div class="icon text-center">
+                    <a href="#"><img src="../assets/img/profile.png" title="My Profile"></a>
+                </div>
+                <div class="icon text-center">
+                    <a href="#"><img src="../assets/img/logout.png" title="Logout"></a>
+                </div>
             </div>
         </nav>
     </header>
@@ -26,7 +33,7 @@
 
             <div class="hero-image">
                 <!-- <img src="img/" alt="hero-image"> -->
-                <span class="button add"> + Add new meetup</span>
+                <a href="addnew.html"><span class="button add"> + Add new meetup</span></a>
             </div>
         </div> <!-- end hero -->
     </header>
@@ -187,5 +194,7 @@
             
         </div> <!-- end wrapper -->
     </div> <!-- end container -->
+
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

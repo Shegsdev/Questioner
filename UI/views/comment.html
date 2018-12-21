@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/responsive.css" />
-    <script src="../assets/js/main.js"></script>
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="nav-bar">
             <div class="logo text-center">
                 <h1>Questioner</h1>
             </div>
@@ -50,11 +49,11 @@
                     <!-- -->
                 </div>
                 <div class="col comment-reply">
-                    <div class="col">
+                    <div class="col" id="col1">
                         <span id="avatar">S</span><br>
                         <span id="name">Sam Smith</span>
                     </div>
-                    <div class="col">
+                    <div class="col" id="col2">
                         <p>It's a new conference for business professionals.</p>
                     </div>
                     <div class="col">
@@ -113,5 +112,13 @@
             </div>
         </form>
     </div> <!-- end container -->
+
+    <script>
+        window.onload = function() {
+            var avatar = document.querySelector('#avatar');
+            avatar.style.background = "blue";
+        }
+        
+    </script>
 </body>
 </html>
