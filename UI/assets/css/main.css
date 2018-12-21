@@ -34,7 +34,8 @@ h1, h2 {
 }
 
 h1 {
-	font-size: 38px;
+    font-size: 38px;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -58,6 +59,9 @@ img {
 .btn-primary {
     color: rgb(30, 67, 99);
 }
+.btn-success {
+    color: rgb(5, 155, 80);
+}
 .btn-danger {
     color: rgb(188, 45, 25);
 }
@@ -68,11 +72,28 @@ img {
 
 .logo h1 {
     color: rgb(255, 137, 38);
+    padding-left: 10px;
 }
 
 nav {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+#nav-bar {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.icon {
+    min-height: 10px;
+}
+nav .icons {
+    display: flex;
+}
+.icon img {
+    -ms-transform: scale(0.3); /* IE 9 */
+    -webkit-transform: scale(0.3); /* Safari 3-8 */
+    transform: scale(0.2);
 }
 
 .container {
@@ -108,7 +129,8 @@ nav {
 }
 
 .button-red {
-	color: #fff;
+    color: #fff;
+    border: 0 none;
 	background: rgb(188, 45, 25);
 }
 .button-red:hover {
@@ -200,6 +222,7 @@ input::placeholder {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
 }
 .display {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
@@ -295,7 +318,7 @@ textarea:focus {
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 30px;
 	padding-top: 10px;
-	padding-bottom: 60px; 
+	padding-bottom: 90px; 
 }
 
 .hero-image {
@@ -310,17 +333,34 @@ textarea:focus {
 	margin: 10px 20px 68px;
 }
 
-.profile .stats, .profile .highlights {
+.profile .stats, .profile .highlights, .meetups {
     border: 1px solid rgba(0, 0, 0, 0.425);
     border-radius: 8px;
-    padding: 20px;
+    padding: 25px;
 }
 
-.profile .highlights {
+.profile .highlights, .meetups {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
 }
 
-.profile .quote {
-    font-size: 96px;
+/* Admin Page */
+.meetups {
+    margin-top: 30px;
+}
+.meetups #col3 {
+    border-left: 3px solid rgba(0, 0, 0, 0.425);
+}
+.add {
+    color: #fff;
+    border: 0 none;
+    padding: 10px 20px;
+    font-size: 18px;
+    
+    font-weight: bold;
+    background: rgb(5, 155, 80);
+}
+.add:hover {
+    color: #fff;
+    background: rgba(5, 155, 80, 0.849);
 }

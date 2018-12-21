@@ -16,12 +16,146 @@
 	.card {
         max-width: 80%;
     }
+
+    /* Single page (meetup.html) */
+    .display {
+        margin-top: 5px;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    .display #col1, .display #col2 {
+        border-radius: 5px;
+    }
+
+    /* Comments page (comment.html) */
+    .row {
+        margin-bottom: 10px;
+    }
+    .col {
+        margin: 5px;
+        padding: 0 10px;
+    }
+    .replies {
+        background: rgb(214, 210, 210);
+        grid-template-columns: 1fr;
+    }
+    .questions, .comment, .comment-reply {
+        padding: 0;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    
+    .questions #avatar, .comment #avatar, .comment-reply #avatar {
+        visibility: hidden;
+    }
+    .questions #name, .comment #name, .comment-reply #name {
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 15px;
+        display: inline-block;
+    }
+    
+    .questions #upvote, #downvote, #reply,
+    .comment #upvote, #downvote {
+        position: relative;
+        bottom: 0;
+    }
+    
+    .questions #downvote,
+    .comment #downvote {
+        right: -50px;
+    }
+    
+    .questions #reply {
+        right: -85px;
+        border: 0 none;
+        color: #fff;
+        margin: 3px 0;
+        cursor: pointer;
+        background: rgb(30, 67, 99);
+    }
+    #commentForm {
+        float: left;
+        font-size: 14px;
+        width: 100%;
+    }
 }
 
 /* Medium Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	.container {
 		max-width: 660px;
+    }
+
+    /* Single page (meetup.html) */
+    .display {
+        margin-top: 5px;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    .display #col1, .display #col2 {
+        border-radius: 5px;
+    }
+    .questions #reply {
+        right: -50px !important;
+    }
+    .questions #downvote,
+    .comment #downvote {
+        right: -30px;
+    }
+    #questionForm {
+        width: 100%;
+    }
+    /* Comments page (comment.html) */
+    .row {
+        margin-bottom: 10px;
+    }
+    .col {
+        padding: 0 10px;
+    }
+    .replies {
+        background: rgb(214, 210, 210);
+        grid-template-columns: 1fr;
+    }
+    .questions, .comment, .comment-reply {
+        padding: 0;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    
+    .questions #avatar, .comment #avatar, .comment-reply #avatar {
+        visibility: hidden;
+    }
+    .questions #name, .comment #name, .comment-reply #name {
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 15px;
+        display: inline-block;
+    }
+    
+    .questions #upvote, #downvote, #reply,
+    .comment #upvote, #downvote {
+        position: relative;
+        bottom: 0;
+    }
+    
+    .questions #downvote,
+    .comment #downvote {
+        right: -50px;
+    }
+    
+    .questions #reply {
+        right: -85px;
+        border: 0 none;
+        color: #fff;
+        margin: 3px 0;
+        cursor: pointer;
+        background: rgb(30, 67, 99);
+    }
+    #commentForm {
+        float: left;
+        font-size: 14px;
+        width: 100%;
     }
 }
 
@@ -75,6 +209,65 @@
         padding: 10px 20px;
         border-radius: 5px;
     }
+
+    /* Single page (meetup.html) */
+    .display {
+        margin-top: 5px;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    .display #col1, .display #col2 {
+        border-radius: 5px;
+    }
+    .questions #reply {
+        right: -50px !important;
+    }
+    .questions #downvote,
+    .comment #downvote {
+        right: -30px;
+    }
+    #questionForm {
+        width: 100%;
+    }
+
+    /* Comments page (comment.html) */
+    .row {
+        margin-bottom: 10px;
+    }
+    .col {
+        padding: 0 10px;
+    }
+    .replies {
+        background: rgb(214, 210, 210);
+        grid-template-columns: 1fr;
+    }
+    .questions, .comment, .comment-reply {
+        padding: 0;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    
+    .questions #avatar, .comment #avatar, .comment-reply #avatar {
+        visibility: hidden;
+    }
+    .questions #name, .comment #name, .comment-reply #name {
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 15px;
+        display: inline-block;
+    }
+    
+    .questions #upvote, #downvote, #reply,
+    .comment #upvote, #downvote {
+        position: relative;
+        bottom: 0;
+    }
+
+    #commentForm {
+        float: left;
+        font-size: 14px;
+        width: 100%;
+    }
 }
 
 /* Custom, iPhone Retina */
@@ -126,5 +319,19 @@
     .button {
         padding: 10px 20px;
         border-radius: 5px;
+    }
+
+    /* Single page (meetup.html) */
+    .display {
+        margin-top: 5px;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    .display #col1, .display #col2 {
+        border-radius: 5px;
+    }
+
+    .questions #reply {
+        right: -50px;
     }
 }
