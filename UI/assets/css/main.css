@@ -4,7 +4,9 @@ html {
 
 body {
     margin: 0;
-	font-family: "Arial", sans-serif;
+    font-family: -apple-system, 
+                  BlinkMacSystemFont,
+                  "Oxygen","Ubuntu", sans-serif;
 	font-size: 16px;
 	line-height: 1.6;
 }
@@ -29,7 +31,6 @@ li {
 }
 
 h1, h2 {
-	font-family: 'Arial', Arial, sans-serif;
 	font-weight: bold;
 }
 
@@ -71,6 +72,7 @@ img {
 }
 
 .logo h1 {
+    font-family: "Lato";
     color: rgb(255, 137, 38);
     padding-left: 10px;
 }

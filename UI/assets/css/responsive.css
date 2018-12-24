@@ -315,11 +315,7 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
-	.container {
-		max-width: 260px;
-    }
-
-    .card {
+        .card {
         max-width: 100%;
     }
 
