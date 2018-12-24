@@ -3,11 +3,11 @@ Crowd-source questions for a meetup. ​ Questioner​​ helps the meetup organ
 
 # Pages
 
-[Page 1](https://shegsdev.github.io/Questioner/views/login.html) .
-[Page 2](https://shegsdev.github.io/Questioner/views/register.html) .
-[Page 3](https://shegsdev.github.io/Questioner/views/meetup.html) .
-[Page 4](https://shegsdev.github.io/Questioner/views/profile.html) .
-[Page 5](https://shegsdev.github.io/Questioner/views/comment.html) .
-[Page 6](https://shegsdev.github.io/Questioner/views/admin.html) .
-[Page 7](https://shegsdev.github.io/Questioner/views/addnew.html) .
+[Page 1](https://shegsdev.github.io/Questioner/UI/views/login.html) .
+[Page 2](https://shegsdev.github.io/Questioner/UI/views/register.html) .
+[Page 3](https://shegsdev.github.io/Questioner/UI/views/meetup.html) .
+[Page 4](https://shegsdev.github.io/Questioner/UI/views/profile.html) .
+[Page 5](https://shegsdev.github.io/Questioner/UI/views/comment.html) .
+[Page 6](https://shegsdev.github.io/Questioner/UI/views/admin.html) .
+[Page 7](https://shegsdev.github.io/Questioner/UI/views/addnew.html) .
 
