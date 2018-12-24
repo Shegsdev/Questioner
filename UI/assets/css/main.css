@@ -314,9 +314,8 @@ textarea:focus {
 .hero {
     background: rgb(30, 67, 99);
     color: #fff;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 30px;
+	display: flex;
+	justify-content: space-between;
 	padding-top: 10px;
 	padding-bottom: 90px; 
 }

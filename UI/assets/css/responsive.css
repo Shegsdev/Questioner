@@ -36,8 +36,10 @@
         padding: 0 10px;
     }
     .replies {
-        background: rgb(214, 210, 210);
         grid-template-columns: 1fr;
+    }
+    .comment-reply {
+        background: #f5f5f5;
     }
     .questions, .comment, .comment-reply {
         padding: 0;
@@ -114,8 +116,10 @@
         padding: 0 10px;
     }
     .replies {
-        background: rgb(214, 210, 210);
         grid-template-columns: 1fr;
+    }
+    .comment-reply {
+        background: #f5f5f5;
     }
     .questions, .comment, .comment-reply {
         padding: 0;
@@ -125,6 +129,7 @@
     
     .questions #avatar, .comment #avatar, .comment-reply #avatar {
         visibility: hidden;
+        position: absolute;
     }
     .questions #name, .comment #name, .comment-reply #name {
         font-size: 16px;
@@ -157,12 +162,23 @@
         font-size: 14px;
         width: 100%;
     }
+    /* Admin Page (admin.html) */
+    .hero {
+        display: block;
+    }
+    .hero-image {
+        padding-left: 10px;
+    }
+    .hero .button {
+        font-size: 14px;
+        font-weight: normal;
+    }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
 	.container {
-		max-width: 320px;
+        margin: 0;
     }
 
     .card {
@@ -238,8 +254,10 @@
         padding: 0 10px;
     }
     .replies {
-        background: rgb(214, 210, 210);
         grid-template-columns: 1fr;
+    }
+    .comment-reply {
+        background: #f5f5f5;
     }
     .questions, .comment, .comment-reply {
         padding: 0;
@@ -267,6 +285,31 @@
         float: left;
         font-size: 14px;
         width: 100%;
+    }
+
+    /* Admin Page (admin.html) */
+    .hero {
+        display: block;
+    }
+    .hero-image {
+        padding-left: 10px;
+    }
+    .hero .button {
+        font-size: 14px;
+        font-weight: normal;
+    }
+    .meetups {
+        display: block;
+    }
+    .meetups img {
+        visibility: hidden;
+        position: absolute;
+    }
+    .meetups #col3 {
+        border-left: 3px solid #f18728;
+    }
+    .meetups #col2 {
+        border-bottom: 1px solid #f5f5f5;
     }
 }
 
@@ -333,5 +376,10 @@
 
     .questions #reply {
         right: -50px;
+    }
+
+    /* Admin Page (admin.html) */
+    .hero {
+        display: block;
     }
 }
