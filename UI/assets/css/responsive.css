@@ -300,6 +300,7 @@
     }
     .meetups {
         display: block;
+        margin: 5px;
     }
     .meetups img {
         visibility: hidden;

@@ -7,7 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/responsive.css" />
-    <script src="../assets/js/main.js"></script>
+    <style type="text/css">
+        #tag input {
+            height: 70px;
+        }
+        #tag label {
+            font-size: 10px;
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -29,7 +38,7 @@
                 <form action="#" method="POST" id="form">
                     <div class="form-row">
                         <div class="form-input">
-                            <input type="text" name="title" placeholder="Title" autofocus>
+                            <input type="text" name="topic" placeholder="Topic" autofocus>
                         </div>
                     </div>
                     <div class="form-row">
@@ -37,12 +46,18 @@
                             <input type="text" name="description" placeholder="Description">
                         </div>
                     </div>
+                    <div class="form-input">
+                            <input type="text" name="location" placeholder="Location" >
+                        </div>
                     <div class="form-row">
                         <div class="form-input">
                             <input type="date" name="date" >
                         </div>
-                        <div class="form-input">
-                            <input type="time" name="time" >
+                    </div>
+                    <div class="form-row">
+                        <div id="tag" class="form-input">
+                            <label>Add tags to this meetup separated with white-space <br/> e.g. Business Cryptocurrency...</label><br>
+                            <input type="text" name="tags" placeholder="Tags" >
                         </div>
                     </div>
                     <div class="form-row">
