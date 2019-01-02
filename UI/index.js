@@ -88,6 +88,14 @@ app.get('/api/v1/meetups/:id', (req, res) => {
 	})
 });
 
+// Fetch all meetups
+app.get('/api/v1/meetups', (req, res) => {
+	res.status(200).send({
+		status: 200,
+		'data': meetups,
+	});
+});
+
 
 app.listen(app.get('port'), function() {
 	console.log('Server is running on port ' + app.get('port') + '...\nPress Ctrl+C to terminate');
