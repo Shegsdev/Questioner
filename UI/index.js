@@ -70,6 +70,24 @@ app.post('/api/v1/questions', (req, res) => {
 	});
 });
 
+// Fetch a meetup record
+app.get('/api/v1/meetups/:id', (req, res) => {
+	const id = parseInt(req.params.id, 10);
+
+	meetups.map(meetup => {
+		if (meetup.id === id) {
+			return res.status(200).send({
+				status: 200,
+				data: meetup,
+			});
+		}
+	});
+	return res.status(404).send({
+		status: 404,
+		error: 'meetup was not found',
+	})
+});
+
 
 app.listen(app.get('port'), function() {
 	console.log('Server is running on port ' + app.get('port') + '...\nPress Ctrl+C to terminate');
