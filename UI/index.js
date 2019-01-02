@@ -1,6 +1,7 @@
 const express = require('express');
 const meetups = require('./db/meetups').default;
 const users = require('./db/users').default;
+const questions = require('./db/questions').default;
 
 const bodyParser = require('body-parser');
 
@@ -22,7 +23,7 @@ app.post('/api/v1/meetups', (req, res) => {
 	if (!req.body.topic) {
 		return res.status(400).send({
 			status: 400,
-			error: 'title required',
+			error: 'topic required',
 		});
 	}
 
@@ -36,6 +37,32 @@ app.post('/api/v1/meetups', (req, res) => {
 		tags: req.body.tags
 	}
 	meetups.push(meetup);
+
+	return res.status(200).send({
+		status: 201,
+		data: meetup,
+	});
+});
+
+// Create a question record
+app.post('/api/v1/questions', (req, res) => {
+	if (!req.body.title) {
+		return res.status(400).send({
+			status: 400,
+			error: 'title required',
+		});
+	}
+
+	const question = {
+		id: questions.length+1,
+		createdOn: new Date,
+		createdBy: null,
+		meetups: null,
+		title: req.body.title,
+		body: req.body.question,
+		votes: 0,
+	}
+	questions.push(question);
 
 	return res.status(200).send({
 		status: 201,
