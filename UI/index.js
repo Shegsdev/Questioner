@@ -66,7 +66,7 @@ app.post('/api/v1/questions', (req, res) => {
 
 	return res.status(200).send({
 		status: 201,
-		data: meetup,
+		data: question,
 	});
 });
 
@@ -92,8 +92,81 @@ app.get('/api/v1/meetups/:id', (req, res) => {
 app.get('/api/v1/meetups', (req, res) => {
 	res.status(200).send({
 		status: 200,
-		'data': meetups,
+		data: meetups,
 	});
+});
+
+// Upvote a specific meetup
+app.get('/api/v1/questions/:id/upvote', (req, res) => {
+	const id = parseInt(req.params.id, 10);
+	let upvotedQuestion;
+	let questionIndex;
+	questions.map((question, index) => {
+		if (question.id === id) {
+			upvotedQuestion = question;
+			questionIndex = index;
+		}
+	});
+
+	const updatedQuestion = {
+		id: upvotedQuestion.id,
+		createdOn: upvotedQuestion.createdOn,
+		createdBy: upvotedQuestion.createdBy,
+		meetup: upvotedQuestion.meetup,
+		title: upvotedQuestion.title,
+		body: upvotedQuestion.body,
+		votes: upvotedQuestion.votes+1,
+	}
+
+	questions.splice(questionIndex, 1, updatedQuestion);
+
+	return res.status(200).send({
+		status: 200,
+		data: {
+			meetup: updatedQuestion.meetup,
+			title: updatedQuestion.title,
+			body: updatedQuestion.body,
+			votes: updatedQuestion.votes,
+		},
+	});
+
+});
+
+// Downvote a specific meetup
+app.put('/api/v1/questions/:id/downvote', (req, res) => {
+	const id = parseInt(req.params.id, 10);
+
+	let downvotedQuestion;
+	let questionIndex;
+	questions.map((question, index) => {
+		if (question.id === id) {
+			downvotedQuestion = question;
+			questionIndex = index;
+		}
+	});
+
+	const updatedQuestion = {
+		id: downvotedQuestion.id,
+		createdOn: downvotedQuestion.createdOn,
+		createdBy: downvotedQuestion.createdBy,
+		meetup: downvotedQuestion.meetup,
+		title: downvotedQuestion.title,
+		body: downvotedQuestion.body,
+		votes: downvotedQuestion.votes-1,
+	}
+
+	questions.splice(questionIndex, 1, updatedQuestion);
+
+	return res.status(200).send({
+		status: 200,
+		data: {
+			meetup: updatedQuestion.meetup,
+			title: updatedQuestion.title,
+			body: updatedQuestion.body,
+			votes: updatedQuestion.votes,
+		},
+	});
+
 });
 
 
