@@ -1,0 +1,51 @@
+const express = require('express');
+const meetups = require('./db/meetups').default;
+const users = require('./db/users').default;
+
+const bodyParser = require('body-parser');
+
+const _exports = module.exports = {};
+
+// Set up express app
+const app = express();
+
+// configure body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.set('port', process.env.port || 3888);
+
+app.get('/', (req, res) => res.type('text/plain').send('homepage'));
+
+// Create a meetup record
+app.post('/api/v1/meetups', (req, res) => {
+	if (!req.body.topic) {
+		return res.status(400).send({
+			status: 400,
+			error: 'title required',
+		});
+	}
+
+	const meetup = {
+		id: meetups.length+1,
+		createdOn: new Date,
+		location: req.body.location,
+		images: req.body.images,
+		topic: req.body.topic,
+		happeningOn: req.body.date,
+		tags: req.body.tags
+	}
+	meetups.push(meetup);
+
+	return res.status(200).send({
+		status: 201,
+		data: meetup,
+	});
+});
+
+
+app.listen(app.get('port'), function() {
+	console.log('Server is running on port ' + app.get('port') + '...\nPress Ctrl+C to terminate');
+});
+
+exports.closeServer = () => server.close();
