@@ -13,3 +13,5 @@ Crowd-source questions for a meetup. ​ Questioner​​ helps the meetup organ
 
 
 [![Build Status](https://travis-ci.com/Shegsdev/Questioner.svg?branch=CI)](https://travis-ci.com/Shegsdev/Questioner)
+
+[![Coverage Status](https://coveralls.io/repos/github/Shegsdev/Questioner/badge.svg?branch=coverage)](https://coveralls.io/github/Shegsdev/Questioner?branch=coverage)
