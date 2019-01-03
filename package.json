@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha || true",
+    "test": "nyc --reporter=html --reporter=text mocha || true",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "./node_modules/.bin/eslint index.js || true"
   },
   "author": "",
@@ -12,12 +13,14 @@
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^11.9.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
