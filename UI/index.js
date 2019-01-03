@@ -1,6 +1,7 @@
 const express = require('express');
-const meetups = require('./db/meetups').default;
 const users = require('./db/users').default;
+const rsvps = require('./db/rsvps').default;
+const meetups = require('./db/meetups').default;
 const questions = require('./db/questions').default;
 
 const bodyParser = require('body-parser');
@@ -34,7 +35,7 @@ app.post('/api/v1/meetups', (req, res) => {
 		images: req.body.images,
 		topic: req.body.topic,
 		happeningOn: req.body.date,
-		tags: req.body.tags
+		tags: req.body.tags.split(" "),
 	}
 	meetups.push(meetup);
 
@@ -70,6 +71,23 @@ app.post('/api/v1/questions', (req, res) => {
 	});
 });
 
+// Fetch all upcoming meetup records
+app.get('/api/v1/meetups/upcoming', (req, res) => {
+	const upcomingMeetups = meetups.filter(meetup => {
+	   	if(meetup.happeningOn < Date.now()) {
+	   		return res.status(200).send({
+				status: 200,
+				data: meetup,
+			});
+	   	}
+	 });
+	
+	return res.status(404).send({
+		status: 404,
+		error: 'No upcoming meetups',
+	});
+});
+
 // Fetch a meetup record
 app.get('/api/v1/meetups/:id', (req, res) => {
 	const id = parseInt(req.params.id, 10);
@@ -96,8 +114,9 @@ app.get('/api/v1/meetups', (req, res) => {
 	});
 });
 
-// Upvote a specific meetup
-app.get('/api/v1/questions/:id/upvote', (req, res) => {
+
+// Upvote a specific question
+app.patch('/api/v1/questions/:id/upvote', (req, res) => {
 	const id = parseInt(req.params.id, 10);
 	let upvotedQuestion;
 	let questionIndex;
@@ -122,18 +141,18 @@ app.get('/api/v1/questions/:id/upvote', (req, res) => {
 
 	return res.status(200).send({
 		status: 200,
-		data: {
+		data: [{
 			meetup: updatedQuestion.meetup,
 			title: updatedQuestion.title,
 			body: updatedQuestion.body,
 			votes: updatedQuestion.votes,
-		},
+		}],
 	});
 
 });
 
-// Downvote a specific meetup
-app.put('/api/v1/questions/:id/downvote', (req, res) => {
+// Downvote a specific question
+app.patch('/api/v1/questions/:id/downvote', (req, res) => {
 	const id = parseInt(req.params.id, 10);
 
 	let downvotedQuestion;
@@ -159,12 +178,43 @@ app.put('/api/v1/questions/:id/downvote', (req, res) => {
 
 	return res.status(200).send({
 		status: 200,
-		data: {
+		data: [{
 			meetup: updatedQuestion.meetup,
 			title: updatedQuestion.title,
 			body: updatedQuestion.body,
 			votes: updatedQuestion.votes,
-		},
+		}],
+	});
+
+});
+
+// RSVP for a meetup
+app.post('/api/v1/meetups/:id/rsvps', (req, res) => {
+	const id = parseInt(req.params.id, 10);
+
+	let rsvpMeetup;
+	meetups.map(meetup => {
+		if (meetup.id === id) {
+			rsvpMeetup = meetup;
+		}
+	});
+
+	const rsvp = {
+		id: rsvps.length+1,
+		meetup: rsvpMeetup.id,
+		user: rsvpMeetup.user || null,
+		response: req.body.response,
+	}
+
+	rsvps.push(rsvp);
+
+	return res.status(200).send({
+		status: 200,
+		data: [{
+			meetup: rsvpMeetup.id,
+			topic: rsvpMeetup.topic,
+			status: req.body.response,
+		}],
 	});
 
 });

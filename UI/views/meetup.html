@@ -31,7 +31,7 @@
                 <img src="#" alt="Image">
             </div>
             <div class="col" id="col2">
-                <h3>MeetUp Name</h3>
+                <h3>Topic</h3>
                 <p>Description:</p>
                 <p>
                     This is the description of this meetup.
@@ -42,7 +42,14 @@
                 </p>
             </div>
             <div class="col">
-                <button class="button button-green" type="submit">Add to my schedule</button>
+                <div>
+                    <form action="#" method="POST">
+                        <input type="radio" name="yes"> Yes
+                        <input type="radio" name="no"> No
+                        <input type="radio" name="maybe"> Maybe
+                        <button class="button button-green">RSVP this meetup</button>
+                    </form>
+                </div>
             </div>
         </section>
 

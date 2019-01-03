@@ -3,7 +3,7 @@ const date = new Date;
 const meetups = [
 	{
 		"id": 1,
-		"createdOn": date.getDate() + ':' + date.getMonth() + ':' + date.getFullYear(),
+		"createdOn": date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear(),
 		"location": "Lagos",
 		"images": ["../img/meetup1a1.jpg", "../img/meetup1a2.jpg"],
 		"topic": "Big Data",
@@ -12,7 +12,7 @@ const meetups = [
 	},
 	{
 		"id": 2,
-		"createdOn": date.getDate() + ':' + date.getMonth() + ':' + date.getFullYear(),
+		"createdOn": date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear(),
 		"location": "Lagos",
 		"images": ["../img/meetup1a1.jpg", "../img/meetup1a2.jpg"],
 		"topic": "Big Data",
