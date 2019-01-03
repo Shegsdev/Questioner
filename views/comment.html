@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MeetUp | Question | Questioner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/responsive.css" />
+</head>
+<body>
+    <header>
+        <nav id="nav-bar">
+            <div class="logo">
+                <h1>Questioner</h1>
+            </div>
+            <div class="icons">
+                <div class="icon text-center">
+                    <a href="#"><img src="../assets/img/profile.png" title="My Profile"></a>
+                </div>
+                <div class="icon text-center">
+                    <a href="#"><img src="../assets/img/logout.png" title="Logout"></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="row display">
+            <h3>MeetUp name</h3>
+        </section>
+
+        <!-- Comment section-->
+        <section>
+            <div class="row comment">
+                <div class="col">
+                    <span id="avatar">J</span><br>
+                    <span id="name">John Doe</span>
+                </div>
+                <div class="col">
+                    <p>Hi, am new here and I'd love to know what this meetup is all about. Thanks.
+                       Hi, am new here and I'd love to know what this meetup is all about. Thanks.
+                       Hi, am new here and I'd love to know what this meetup is all about. Thanks.
+                    </p>
+                </div>
+                <div class="col">
+                    <span class="btn btn-primary" id="upvote">Upvote</span><i class="arrow"></i>
+                    <span class="btn btn-danger" id="downvote">Downvote</span><i class="arrow"></i>
+                </div>
+            </div>
+        </section> <!-- End Comment section -->
+
+        <!-- Replies section-->
+        <section>
+            <div class="row replies">
+                <div class="col">
+                    <!-- -->
+                </div>
+                <div class="col comment-reply">
+                    <div class="col" id="col1">
+                        <span id="avatar">S</span><br>
+                        <span id="name">Sam Smith</span>
+                    </div>
+                    <div class="col" id="col2">
+                        <p>It's a new conference for business professionals.</p>
+                    </div>
+                    <div class="col">
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+            <div class="row replies">
+                <div class="col">
+                    <!-- -->
+                </div>
+                <div class="col comment-reply">
+                    <div class="col">
+                        <span id="avatar">J</span><br>
+                        <span id="name">Jane Doe</span>
+                    </div>
+                    <div class="col">
+                        <p>Kindly check the description for more info.</p>
+                    </div>
+                    <div class="col">
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+            <div class="row replies">
+                <div class="col">
+                    <!-- -->
+                </div>
+                <div class="col comment-reply">
+                    <div class="col">
+                        <span id="avatar">A</span><br>
+                        <span id="name">Ann Davis</span>
+                    </div>
+                    <div class="col">
+                        <p>MeetUp for business enthusiasts. You gonna love it.</p>
+                    </div>
+                    <div class="col">
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+        </section> <!-- End replies section -->
+
+        <!-- Comment/Reply Form -->
+        <form action="#" method="POST">
+            <div class="form-row">
+                <div class="form-input">
+                    <textarea type="text" name="comment" rows="10" placeholder="Reply to this question"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-input">
+                    <input class="button button-blue" id="commentForm" type="submit" value="Post">
+                </div>
+            </div>
+        </form>
+    </div> <!-- end container -->
+
+    <script>
+        window.onload = function() {
+            var avatar = document.querySelector('#avatar');
+            avatar.style.background = "blue";
+        }
+        
+    </script>
+</body>
+</html>
