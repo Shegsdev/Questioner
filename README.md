@@ -12,4 +12,4 @@ Crowd-source questions for a meetup. ​ Questioner​​ helps the meetup organ
 [Page 7](https://shegsdev.github.io/Questioner/UI/views/addnew.html) .
 
 
-[![Build Status](https://travis-ci.com/Shegsdev/Questioner.svg?branch=master)](https://travis-ci.com/Shegsdev/Questioner)
+[![Build Status](https://travis-ci.com/Shegsdev/Questioner.svg?branch=CI)](https://travis-ci.com/Shegsdev/Questioner)
