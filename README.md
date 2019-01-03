@@ -12,4 +12,4 @@ Crowd-source questions for a meetup. ​ Questioner​​ helps the meetup organ
 [Page 7](https://shegsdev.github.io/Questioner/UI/views/addnew.html) .
 
 
-[![Build Status](https://travis-ci.com/Shegsdev/Questioner.svg?branch=CI)](https://travis-ci.com/Shegsdev/Questioner) [![Coverage Status](https://coveralls.io/repos/github/Shegsdev/Questioner/badge.svg?branch=coverage)](https://coveralls.io/github/Shegsdev/Questioner?branch=coverage)
+[![Build Status](https://travis-ci.com/Shegsdev/Questioner.svg?branch=CI)](https://travis-ci.com/Shegsdev/Questioner) [![Coverage Status](https://coveralls.io/repos/github/Shegsdev/Questioner/badge.svg?branch=coverage)](https://coveralls.io/github/Shegsdev/Questioner?branch=coverage) [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Shegsdev/Questioner)
