@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": "10.15.0"
+  },
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha || true",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
