@@ -11,8 +11,13 @@ const _exports = module.exports = {};
 // Set up express app
 const app = express();
 
-// Set port
-// app.set('port', process.env.port || 5000);
+//Set port
+app.set('port', process.env.port || 5000);
+
+app.get('/', (req, res) => {
+	res.type('html');
+	res.status(200).send('<h1>Links</h1><h3>API Endpoints with GET / Resquests</h3><a href="/api/v1/meetups">All meetups</a><br/><a href="/api/v1/meetups/upcoming">Upcoming meetups</a><br/><a href="/api/v1/meetups/1">Single meetup (id: 1)</a>');
+});
 
 // Create a meetup record
 app.post('/api/v1/meetups', (req, res) => {
@@ -215,8 +220,8 @@ app.post('/api/v1/meetups/:id/rsvps', (req, res) => {
 });
 
 
-// app.listen(app.get('port'), function() {
-// 	console.log('Server is running on port ' + app.get('port') + '...\nPress Ctrl+C to terminate');
-// });
+app.listen(app.get('port'), function() {
+	console.log('Server is running on port ' + app.get('port') + '...\nPress Ctrl+C to terminate');
+});
 
 exports.closeServer = () => server.close();
