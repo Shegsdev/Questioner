@@ -7,7 +7,7 @@ const meetups = [
 		"location": "Lagos",
 		"images": ["../img/meetup1a1.jpg", "../img/meetup1a2.jpg"],
 		"topic": "Big Data",
-		"happeningOn": date,
+		"happeningOn": (date.getDate() + 10) + '-' + date.getMonth() + '-' + date.getFullYear(),
 		"tags": ["Big data", "Data science"],
 	},
 	{
@@ -16,7 +16,7 @@ const meetups = [
 		"location": "Lagos",
 		"images": ["../img/meetup1a1.jpg", "../img/meetup1a2.jpg"],
 		"topic": "Big Data",
-		"happeningOn": date,
+		"happeningOn": (date.getDate() + 10) + '-' + date.getMonth() + '-' + date.getFullYear(),
 		"tags": ["Big data", "Data science"],
 	}
 ];
