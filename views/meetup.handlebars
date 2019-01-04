@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MeetUp | Questioner</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/responsive.css" />
 </head>
 <body>
     <header>
@@ -16,10 +16,10 @@
             </div>
             <div class="icons">
                 <div class="icon text-center">
-                    <a href="#"><img src="../assets/img/profile.png" title="My Profile"></a>
+                    <a href="profile"><img src="/img/profile.png" title="My Profile"></a>
                 </div>
                 <div class="icon text-center">
-                    <a href="#"><img src="../assets/img/logout.png" title="Logout"></a>
+                    <a href="#"><img src="/img/logout.png" title="Logout"></a>
                 </div>
             </div>
         </nav>
@@ -31,7 +31,7 @@
                 <img src="#" alt="Image">
             </div>
             <div class="col" id="col2">
-                <h3>Topic</h3>
+                <h3>{{data}}</h3>
                 <p>Description:</p>
                 <p>
                     This is the description of this meetup.
@@ -69,7 +69,7 @@
                 <div class="col">
                     <span class="btn btn-primary" id="upvote">Upvote</span><i class="arrow"></i>
                     <span class="btn btn-danger" id="downvote">Downvote</span><i class="arrow"></i>
-                    <button id="reply"><a href="comment.html">Reply to this comment</a></button>
+                    <button id="reply"><a href="comment">Reply to this comment</a></button>
                 </div>
             </div>
         </section>
@@ -90,6 +90,5 @@
         </form>
     </div> <!-- end container -->
 
-    <!-- <script src="../assets/js/main.js"></script> -->
 </body>
 </html>
