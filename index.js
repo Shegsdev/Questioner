@@ -12,7 +12,7 @@ const _exports = module.exports = {};
 const app = express();
 
 //Set port
-app.set('port', process.env.port || 5000);
+app.set('port', process.env.port || 3000);
 
 app.get('/', (req, res) => {
 	res.type('html');
