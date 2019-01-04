@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Area | Questioner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/responsive.css" />
+</head>
+<body>
+    <header>
+        <nav id="nav-bar">
+            <div class="logo">
+                <h1>Questioner</h1>
+            </div>
+            <div class="icons">
+                <div class="icon text-center">
+                    <a href="#"><img src="/img/profile.png" title="My Profile"></a>
+                </div>
+                <div class="icon text-center">
+                    <a href="#"><img src="/img/logout.png" title="Logout"></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <header>
+        <div class="hero">
+            <div class="hero-copy">
+                <h1>Admin Panel</h1>
+            </div> <!-- end hero-copy -->
+
+            <div class="hero-image">
+                <!-- <img src="img/" alt="hero-image"> -->
+                <a href="addnew.html"><span class="button add"> + Add new meetup</span></a>
+            </div>
+        </div> <!-- end hero -->
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <section class="profile">
+                {{#each meetup}}
+                <div class="row meetups">
+                    <div class="col" id="col1">
+                        <img src="#" alt="image">
+                    </div>
+                    <div class="col" id="col2">
+                        <h2>{{topic}}</h2>
+                        <p>{{description}}</p>
+                    </div>
+                    <div class="col" id="col3">
+                        Date: {{happeningOn}}<br>
+                        Time: {{time}}
+                    </div>
+                </div>
+                {{/each}}
+
+            </section>
+            
+        </div> <!-- end wrapper -->
+    </div> <!-- end container -->
+</body>
+</html>
