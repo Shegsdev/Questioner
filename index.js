@@ -11,47 +11,8 @@ const _exports = module.exports = {};
 // Set up express app
 const app = express();
 
-// set up handlebars view engine
-var handlebars = require('express3-handlebars')
-	.create({ defaultLayout:'main' });
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
-
 // Set port
 app.set('port', process.env.port || 5000);
-
-// static middleware
-app.use(express.static(__dirname + '/public'));
-
-// configure body-parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.get('/', function(req, res) {
-	res.render('register');
-});
-
-app.get('/login', function(req, res) {
-	res.render('login');
-});
-app.get('/admin', function(req, res) {
-	res.render('admin', {meetup: meetups});
-});
-app.get('/addnew', function(req, res) {
-	res.render('addnew');
-});
-app.get('/meetup', function(req, res) {
-	res.render('meetup');
-});
-app.get('/profile', function(req, res) {
-	res.render('profile');
-});
-
-// 404 catch-all handler (middleware)
-app.use(function(req, res, next){
-	res.status(404);
-	res.render('404');
-});
 
 // Create a meetup record
 app.post('/api/v1/meetups', (req, res) => {
@@ -128,7 +89,7 @@ app.get('/api/v1/meetups/:id', (req, res) => {
 
 	meetups.map(meetup => {
 		if (meetup.id === id) {
-			return res.status(200).render('meetup', {
+			return res.status(200).send({
 				status: 200,
 				data: meetup,
 			});

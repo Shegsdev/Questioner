@@ -2,11 +2,12 @@
   "name": "questioner",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha || true",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "lint": "./node_modules/.bin/eslint index.js || true"
+    "lint": "./node_modules/.bin/eslint index.js || true",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
