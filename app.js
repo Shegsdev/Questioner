@@ -4,9 +4,8 @@ const rsvps = require('./db/rsvps').default;
 const meetups = require('./db/meetups').default;
 const questions = require('./db/questions').default;
 
+// Set up body parser
 const bodyParser = require('body-parser');
-
-const _exports = module.exports = {};
 
 // Set up express app
 const app = express();
