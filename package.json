@@ -2,11 +2,15 @@
   "name": "questioner",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "engines": {
+    "node": "10.15.0"
+  },
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha || true",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "lint": "./node_modules/.bin/eslint index.js || true"
+    "lint": "./node_modules/.bin/eslint index.js || true",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +29,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "express3-handlebars": "^0.5.2",
     "request": "^2.88.0"
   }
 }

@@ -1,5 +1,4 @@
 const express = require('express');
-const users = require('./db/users').default;
 const rsvps = require('./db/rsvps').default;
 const meetups = require('./db/meetups').default;
 const questions = require('./db/questions').default;
@@ -15,9 +14,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.set('port', process.env.port || 3888);
+//Set port
+app.set('port', process.env.port || 5000);
 
-app.get('/', (req, res) => res.type('text/plain').send('homepage'));
+app.get('/', (req, res) => {
+	res.type('html');
+	res.status(200).send('<h1>Links</h1><h3>API Endpoints with GET / Resquests</h3><a href="/api/v1/meetups">All meetups</a><br/><a href="/api/v1/meetups/upcoming">Upcoming meetups</a><br/><a href="/api/v1/meetups/1">Single meetup (id: 1)</a>');
+});
 
 // Create a meetup record
 app.post('/api/v1/meetups', (req, res) => {
