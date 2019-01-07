@@ -11,12 +11,6 @@ import bodyParser from 'body-parser';
 // Set up express app
 const app = express();
 
-// set up handlebars view engine
-import handlebars from 'express3-handlebars';
-
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
-
 // Set port
 app.set('port', process.env.port || 5000);
 
