@@ -16,7 +16,7 @@ describe("meetups", () => {
             });
         });
 
-        it("should return a meetup record", (done, id=1) => {
+        it("should return meetup with id of 1", (done, id=1) => {
             request.get(url+'api/v1/meetups/'+id, (err, res, body) => {
                 expect(JSON.parse(res.body).data.id).to.equal(meetups[id-1].id);
                 done();

@@ -7,7 +7,7 @@ const meetups = [
 		"location": "Lagos",
 		"images": ["/img/meetup1a1.jpg", "/img/meetup1a2.jpg"],
 		"topic": "Big Data",
-		"happeningOn": (date.getDate() + 10) + '-' + date.getMonth() + '-' + date.getFullYear(),
+		"happeningOn":  date.getMonth() + '-' + (date.getDate() + 10) + '-' + date.getFullYear(),
 		"time": "00:00",
 		"tags": ["Big data", "Data science"],
 		"description": "This is the description for this meetup...\
@@ -20,7 +20,7 @@ const meetups = [
 		"location": "Lagos",
 		"images": ["/img/meetup2a1.jpg", "/img/meetup2a2.jpg"],
 		"topic": "Devops",
-		"happeningOn": (date.getDate() + 10) + '-' + date.getMonth() + '-' + date.getFullYear(),
+		"happeningOn":  date.getMonth() + '-' + (date.getDate() + 10) + '-' + date.getFullYear(),
 		"time": "00:00",
 		"tags": ["Software", "Data science"],
 		"description": "This is the description for this meetup...\
@@ -29,4 +29,4 @@ const meetups = [
 	}
 ];
 
-exports.default = meetups;
+export default meetups;
