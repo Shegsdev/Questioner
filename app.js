@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Set port
-app.set('port', process.env.port || 5000);
+app.set('port', process.env.port || 3000);
 
 app.get('/', (req, res) => {
 	res.type('html');
