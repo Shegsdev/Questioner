@@ -35,7 +35,7 @@
             <div class="card-header">Add a new meetup</div>
 
             <div class="card-body">
-                <form action="#" method="POST" id="form">
+                <form action="/api/v1/meetups" method="POST" id="form">
                     <div class="form-row">
                         <div class="form-input">
                             <input type="text" name="topic" placeholder="Topic" autofocus>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-row">
                         <div id="tag" class="form-input">
-                            <label>Add tags to this meetup separated with white-space <br/> e.g. Business Cryptocurrency...</label><br>
+                            <label>Add tags to this meetup separated with a comma <br/> e.g. Business, Cryptocurrency...</label><br>
                             <input type="text" name="tags" placeholder="Tags" >
                         </div>
                     </div>
