@@ -89,6 +89,13 @@
 		max-width: 660px;
     }
 
+    .card {
+        box-shadow: none;
+    }
+    nav {
+        box-shadow: none;
+    }
+
     /* Single page (meetup.html) */
     .display {
         margin-top: 5px;
@@ -183,6 +190,11 @@
 
     .card {
         max-width: 100%;
+        box-shadow: none;
+    }
+
+    nav {
+        box-shadow: none;
     }
 
     h1 {
@@ -318,6 +330,7 @@
 @media only screen and (max-width : 320px) {
         .card {
         max-width: 100%;
+        box-shadow: none;
     }
 
     h1 {
@@ -326,6 +339,10 @@
 
     body {
         font-size: 12px;
+    }
+
+    nav {
+        box-shadow: none;
     }
 
     .card-header {
