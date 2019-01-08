@@ -1,53 +1,3 @@
-import express from 'express';
-import rsvps from './db/rsvps'
-import meetups from './db/meetups';
-import questions from './db/questions';
-import routes from './routes';
-
-import bodyParser from 'body-parser';
-
-// const _exports = module.exports = {};
-
-// Set up express app
-const app = express();
-
-// Set port
-app.set('port', process.env.port || 5000);
-
-// static middleware
-app.use(express.static(__dirname + '/public'));
-
-// configure body-parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use('/api/v1', routes);
-
-// Create a meetup record
-app.post('/meetups', (req, res) => {
-	if (!req.body.topic) {
-		return res.status(400).send({
-			status: 400,
-			error: 'topic required',
-		});
-	}
-
-	const meetup = {
-		id: meetups.length+1,
-		createdOn: new Date,
-		location: req.body.location,
-		images: req.body.images,
-		topic: req.body.topic,
-		happeningOn: req.body.date,
-		tags: req.body.tags.split(" "),
-	}
-	meetups.push(meetup);
-
-	return res.status(200).send({
-		status: 201,
-		data: meetup,
-	});
-});
 
 // Create a question record
 app.post('/questions', (req, res) => {
@@ -89,32 +39,6 @@ app.get('/meetups/upcoming', (req, res) => {
 	return res.status(404).send({
 		status: 404,
 		error: 'No upcoming meetups',
-	});
-});
-
-// Fetch a meetup record
-app.get('/meetups/:id', (req, res) => {
-	const id = parseInt(req.params.id, 10);
-
-	meetups.map(meetup => {
-		if (meetup.id === id) {
-			return res.status(200).send({
-				status: 200,
-				data: meetup,
-			});
-		}
-	});
-	return res.status(404).send({
-		status: 404,
-		error: 'meetup was not found',
-	})
-});
-
-// Fetch all meetups
-app.get('/meetups', (req, res) => {
-	res.status(200).send({
-		status: 200,
-		data: meetups,
 	});
 });
 
