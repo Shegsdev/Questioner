@@ -7,12 +7,6 @@ import bodyParser from 'body-parser';
 // Set up express app
 const app = express();
 
-// set up handlebars view engine
-const handlebars = require('express3-handlebars').create({defaultLayout: 'main'});
-
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
-
 // Set port
 app.set('port', process.env.port || 5000);
 
