@@ -1,5 +1,5 @@
 
-class Meetup {
+class MeetupModel {
     /**
      * class constructor
      * @param {object} data
@@ -7,18 +7,15 @@ class Meetup {
     constructor() {
       this.meetups = [];
     }
-    /**
-     * 
-     * @returns {object} meetup object
-    */
+    // Create a new meetup record
     create(data) {
         const date = new Date;
         const newMeetup = {
             id: this.meetups.length+1,
             createdOn: date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear(),
+            topic: data.topic,
             location: data.location,
             image: data.image,
-            topic: data.topic,
             happeningOn:  data.happeningOn,
             time: data.time,
             tags: data.tags,
@@ -27,24 +24,22 @@ class Meetup {
         this.meetups.push(newMeetup);
         return newMeetup
     }
-    /**
-     * 
-     * @param id
-     * @returns {object} meetup object
-     */
+    // Get one meetup record
     findOne(id) {
-      return this.meetups.find(reflect => reflect.id === id);
+      return this.meetups.find(meetup => meetup.id === id);
     }
-    /**
-     * @returns {object} returns all meetups
-     */
+
+    // Fetch all meetup records
     findAll() {
       return this.meetups;
     }
-    /**
-     * 
-     * @param id 
-     */
+
+    // Get upcoming meetups
+    findUpcoming() {
+      return this.meetups.filter(meetup => meetup.happeningOn < Date.now())
+    }
+
+    // Delete a specific meetup
     delete(id) {
       const meetup = this.findOne(id);
       const index = this.meetups.indexOf(meetup);
@@ -52,5 +47,6 @@ class Meetup {
       return {};
     }
   }
-  export default new Meetup();
+
+  export default new MeetupModel();
   
