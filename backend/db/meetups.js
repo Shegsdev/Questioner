@@ -7,7 +7,7 @@ const meetups = [
 		"location": "Lagos",
 		"images": ["/img/meetup1a1.jpg", "/img/meetup1a2.jpg"],
 		"topic": "Big Data",
-		"happeningOn":  date.getMonth() + '-' + (date.getDate() + 10) + '-' + date.getFullYear(),
+		"happeningOn":  date.getMonth()+1 + '-' + (date.getDate() + 10) + '-' + date.getFullYear(),
 		"time": "00:00",
 		"tags": ["Big data", "Data science"],
 		"description": "This is the description for this meetup...\

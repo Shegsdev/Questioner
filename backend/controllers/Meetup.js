@@ -66,7 +66,7 @@ const Meetup = {
       return res.status(200).send({
           status: 200,
           data: meetups.map(meetup => {
-            return {meetup.id, meetup.topic, meetup.location, meetup.tags}
+            return meetup.id, meetup.topic, meetup.location, meetup.tags
             })
       });
   },
