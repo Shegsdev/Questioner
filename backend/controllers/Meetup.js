@@ -50,31 +50,39 @@ const Meetup = {
 
   getUpcoming(req, res) {
     const upcomingMeetups = MeetupModel.findUpcoming();
-      if(upcomingMeetups) {
-        return res.status(200).send({
-          status: 200,
-          data: UpcomingMeetups,
-        });
+      if(!upcomingMeetups) {
+          return res.status(404).send({
+              status: 404,
+              error: 'No upcoming meetups',
+          });
       }
- 
-    return res.status(404).send({
-        status: 404,
-        error: 'No upcoming meetups',
-    });
+
+      const date = upcomingMeetups.map(d => d.join("-"));
+      let meetups = MeetupModel.findAll().map(meetup => {
+          for (let d of date) {
+            if (d === meetup.happeningOn) return meetup;
+          }
+      })
+      return res.status(200).send({
+          status: 200,
+          data: meetups.map(meetup => {
+            return {meetup.id, meetup.topic, meetup.location, meetup.tags}
+            })
+      });
   },
 
   delete(req, res) {
-    const meetup = MeetupModel.findOne(req.params.id);
+    const meetup = MeetupModel.findOne(parseInt(req.params.id, 10));
     if (!meetup) {
         return res.status(404).send({
             status: 404,
             error: 'meetup was not found',
         });
     }
-    const ref = MeetupModel.delete(req.params.id);
+    const ref = MeetupModel.delete(meetup.id);
     return res.status(200).send({
         status: 200,
-        data: ref,
+        data: [ref, 'meetup was successfully deleted'],
     });
   }
 

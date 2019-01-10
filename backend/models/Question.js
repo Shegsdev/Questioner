@@ -1,3 +1,4 @@
+import MeetupModel from './Meetup';
 
 class QuestionModel {
     /**
@@ -9,13 +10,14 @@ class QuestionModel {
     }
 
     // Create a new meetup record
-    create(data, meetupId) {
+    create(data, id) {
         const date = new Date;
+        const meetup = MeetupModel.findOne(id);
         const newQuestion = {
             id: this.questions.length+1,
             createdOn: date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear(),
             createdBy: null,
-            meetup: meetupId,
+            meetup: meetup.id,
             title: data.title,
             body: data.body,
             votes: 0
@@ -38,7 +40,7 @@ class QuestionModel {
     upvote(id) {
         let upvotedQuestion;
         let questionIndex;
-        questions.map((question, index) => {
+        this.questions.map((question, index) => {
             if (question.id === id) {
                 upvotedQuestion = question;
                 questionIndex = index;
@@ -55,8 +57,7 @@ class QuestionModel {
             votes: upvotedQuestion.votes+1,
         }
 
-        questions.splice(questionIndex, 1, updatedQuestion);
-
+        this.questions.splice(questionIndex, 1, updatedQuestion);
         return updatedQuestion;
     }
 
@@ -64,7 +65,7 @@ class QuestionModel {
     downvote(id) {
         let downvotedQuestion;
         let questionIndex;
-        questions.map((question, index) => {
+        this.questions.map((question, index) => {
             if (question.id === id) {
                 downvotedQuestion = question;
                 questionIndex = index;
@@ -78,22 +79,12 @@ class QuestionModel {
             meetup: downvotedQuestion.meetup,
             title: downvotedQuestion.title,
             body: downvotedQuestion.body,
-            votes: downvotedQuestion.votes-1,
+            votes: downvotedQuestion.votes > 0 ? downvotedQuestion.votes-1 : 0,
         }
 
-        questions.splice(questionIndex, 1, updatedQuestion);
-
-        return res.status(200).send({
-            status: 200,
-            data: [{
-                meetup: updatedQuestion.meetup,
-                title: updatedQuestion.title,
-                body: updatedQuestion.body,
-                votes: updatedQuestion.votes,
-            }],
-        });
+        this.questions.splice(questionIndex, 1, updatedQuestion);
+        return updatedQuestion;
     }
-  }
+}
 
-  export default new QuestionModel();
-  
+export default new QuestionModel();
