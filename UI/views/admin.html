@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin Area | Questioner</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/responsive.css" />
 </head>
 <body>
     <header>
@@ -16,10 +16,10 @@
             </div>
             <div class="icons">
                 <div class="icon text-center">
-                    <a href="#"><img src="../public/img/profile.png" title="My Profile"></a>
+                    <a href="#"><img src="../assets/img/profile.png" title="My Profile"></a>
                 </div>
                 <div class="icon text-center">
-                    <a href="#"><img src="../public/img/logout.png" title="Logout"></a>
+                    <a href="#"><img src="../assets/img/logout.png" title="Logout"></a>
                 </div>
             </div>
         </nav>
@@ -28,7 +28,7 @@
     <header>
         <div class="hero">
             <div class="hero-copy">
-                <h1>Admin Panel</h1>
+                <h1>Admin Area</h1>
             </div> <!-- end hero-copy -->
 
             <div class="hero-image">
@@ -46,7 +46,8 @@
                     </div>
                     <div class="col" id="col2">
                         <h2>topic</h2>
-                        <p>description</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div class="col" id="col3">
                         Date: Date<br>
@@ -60,7 +61,8 @@
                     </div>
                     <div class="col" id="col2">
                         <h2>topic</h2>
-                        <p>description</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
                     <div class="col" id="col3">
                         Date: Date<br>
@@ -74,7 +76,8 @@
                     </div>
                     <div class="col" id="col2">
                         <h2>topic</h2>
-                        <p>description</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div class="col" id="col3">
                         Date: Date<br>
@@ -88,17 +91,6 @@
         </div> <!-- end wrapper -->
     </div> <!-- end container -->
 
-    <script>
-        let image = document.getElementsByClassName('meetup_image');
-        window.onload = function() {
-            for (let i = 0; i < image.length; i++) {
-                let r = Math.random() * 225,
-                g = Math.random() * 225,
-                b = Math.random() * 225;
-
-                image[i].style.background = `rgb(${r}, ${g}, ${b})`;
-            }
-        }
-    </script>
+    <script src="../assets/js/avatar.js"></script>
 </body>
 </html>

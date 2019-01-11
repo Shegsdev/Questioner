@@ -47,9 +47,9 @@
         grid-gap: 0;
     }
     
-    .questions #avatar, .comment #avatar, .comment-reply #avatar {
+    /*.questions #avatar, .comment #avatar, .comment-reply #avatar {
         visibility: hidden;
-    }
+    }*/
     .questions #name, .comment #name, .comment-reply #name {
         font-size: 16px;
         font-weight: bold;
@@ -90,9 +90,6 @@
     }
 
     .card {
-        box-shadow: none;
-    }
-    nav {
         box-shadow: none;
     }
 
@@ -190,10 +187,6 @@
 
     .card {
         max-width: 100%;
-        box-shadow: none;
-    }
-
-    nav {
         box-shadow: none;
     }
 
