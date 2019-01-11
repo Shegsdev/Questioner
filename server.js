@@ -8,7 +8,7 @@ import bodyParser from 'body-parser';
 const app = express();
 
 // Set port
-app.set('port', process.env.port || 5000);
+app.set('port', process.env.PORT || 5000);
 
 // configure body-parser
 app.use(bodyParser.json());
