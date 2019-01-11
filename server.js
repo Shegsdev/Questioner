@@ -17,6 +17,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api/v1', routes);
 // app.use(express.json());
 
+app.get('/', (req, res) => {
+	res.status(200).send({
+		status: 200,
+		data: "Welcome to Questioner API"
+	});
+});
+
 // 404 catch-all handler (middleware)
 app.use( (req, res, next) => {
 	res.status(404);

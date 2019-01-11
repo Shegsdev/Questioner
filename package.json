@@ -10,7 +10,8 @@
     "test": "nyc --reporter=html --reporter=text mocha || true",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "./node_modules/.bin/eslint index.js || true",
-    "start": "nodemon --exec node_modules/.bin/babel-node server.js"
+    "start": "node_modules/.bin/babel-node server.js",
+    "build": "nodemon --exec node_modules/.bin/babel-node server.js"
   },
   "author": "",
   "license": "ISC",
