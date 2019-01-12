@@ -9,7 +9,7 @@ const url = "http://localhost:5000/";
 
 describe("meetups", () => {
     describe("GET /", () => {
-        it("should return all meetup records", (done) => {
+        it("should return length of all meetup records", (done) => {
             request.get(url+'api/v1/meetups', (err, res, body) => {
                 expect(JSON.parse(res.body).data.length).to.equal(meetups.length);
                 done();
